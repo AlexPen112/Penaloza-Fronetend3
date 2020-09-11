@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Credit Score</title>
+    <!-- <script src="index.js"></script>
+    <script src="path-to/webcomponents-loader.js" defer></script> -->
+
+    <!-- Load component when polyfills are definitely ready -->
+    <script type="module">
+      // Take care of cases in which the browser runs this
+      // script before it has finished running
+      // webcomponents-loader.js (e.g. Firefox script execution order)
+      window.WebComponents = window.WebComponents || {
+        waitFor(cb) {
+          addEventListener("WebComponentsReady", cb);
+        },
+      };
+
+      WebComponents.waitFor(async () => {
+        import("./index.js");
+      });
+    </script>
+    <!-- ! DO NOT REMOVE THIS COMMENT, WE NEED ITS CLOSING MARKER -->
+  </head>
+
+  <body>
+    <my-index></my-index>
+    <!-- <script src="webcomponents-loader.js"></script> -->
+  </body>
+</html>
